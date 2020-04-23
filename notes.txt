@@ -1,0 +1,11 @@
+docker build -t dicegame .
+docker run --name dicegame -d -p 80:80 dicegame
+docker stop
+docker rm
+docker ps
+docker ps -a
+
+docker-machine create --digitalocean-size "s-1vcpu-1gb" --driver digitalocean --digitalocean-access-token $DOCKER_MACHINE_ACCESS docker-1
+docker-machine rm
+eval $(docker-machine env docker-1)
+eval $(docker-machine env -u)
